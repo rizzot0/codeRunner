@@ -1,0 +1,20 @@
+{
+  "name": "coderunner-backend",
+  "version": "1.0.0",
+  "description": "Online Compiler Backend - Vercel Serverless Functions",
+  "main": "api/execution.js",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'Vercel builds automatically'",
+    "start": "node api/execution.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "vercel": "^28.0.0"
+  },
+  "engines": {
+    "node": "18.x"
+  }
+}

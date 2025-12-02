@@ -1,0 +1,126 @@
+{
+    "base": "vs-dark",
+    "inherit": true,
+    "rules": [
+      {
+        "token": "",
+        "foreground": "839496"
+      },
+      {
+        "token": "comment",
+        "foreground": "586e75"
+      },
+      {
+        "token": "string",
+        "foreground": "2aa198"
+      },
+      {
+        "token": "number",
+        "foreground": "d33682"
+      },
+      {
+        "token": "keyword",
+        "foreground": "859900"
+      },
+      {
+        "token": "operator",
+        "foreground": "859900"
+      },
+      {
+        "token": "identifier",
+        "foreground": "268bd2"
+      },
+      {
+        "token": "variable",
+        "foreground": "268bd2"
+      },
+      {
+        "token": "function",
+        "foreground": "b58900"
+      },
+      {
+        "token": "tag",
+        "foreground": "268bd2"
+      },
+      {
+        "token": "attribute",
+        "foreground": "93a1a1"
+      },
+      {
+        "token": "constant",
+        "foreground": "cb4b16"
+      },
+      {
+        "token": "regexp",
+        "foreground": "dc322f"
+      },
+      {
+        "token": "delimiter",
+        "foreground": "839496"
+      },
+      {
+        "token": "annotation",
+        "foreground": "d33682"
+      },
+      {
+        "token": "type",
+        "foreground": "b58900"
+      },
+      {
+        "token": "class",
+        "foreground": "b58900"
+      },
+      {
+        "token": "interface",
+        "foreground": "b58900"
+      },
+      {
+        "token": "namespace",
+        "foreground": "b58900"
+      },
+      {
+        "token": "enum",
+        "foreground": "b58900"
+      },
+      {
+        "token": "struct",
+        "foreground": "b58900"
+      },
+      {
+        "token": "parameter",
+        "foreground": "268bd2"
+      },
+      {
+        "token": "error",
+        "foreground": "dc322f"
+      },
+      {
+        "token": "warning",
+        "foreground": "cb4b16"
+      },
+      {
+        "token": "info",
+        "foreground": "2aa198"
+      }
+    ],
+    "colors": {
+      "editor.foreground": "#839496",
+      "editor.background": "#002b36",
+      "editorCursor.foreground": "#839496",
+      "editor.selectionBackground": "#073642",
+      "editor.inactiveSelectionBackground": "#073642",
+      "editorLineNumber.foreground": "#586e75",
+      "editor.lineHighlightBackground": "#073642",
+      "editor.wordHighlightBackground": "#073642",
+      "editor.wordHighlightStrongBackground": "#073642",
+      "editorBracketMatch.background": "#073642",
+      "editorBracketMatch.border": "#586e75",
+      "editorGutter.background": "#002b36",
+      "editorIndentGuide.background": "#586e75",
+      "editorRuler.foreground": "#073642",
+      "editorOverviewRuler.border": "#073642",
+      "editorError.foreground": "#dc322f",
+      "editorWarning.foreground": "#cb4b16",
+      "editorInfo.foreground": "#2aa198"
+    }
+  }

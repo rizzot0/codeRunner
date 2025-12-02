@@ -1,0 +1,25 @@
+/* solarized-night.css */
+body.solarized-night-theme {
+  --primary-color: #002b36;
+  --secondary-color: #073642;
+  --text-color: #839496;
+  --header-bg: #073642;
+  --button-bg: #586e75;
+  --button-text: #eee8d5;
+  --accent-green: #859900;
+  --accent-red: #dc322f;
+  --accent-blue: #268bd2;
+  --accent-gray: #586e75;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --editor-bg: #002b36; /* Editor background for solarized-night theme */
+  --border-color: #586e75; /* Muted gray for borders */
+  --text-muted: #586e75; /* Muted gray for text */
+  --tab-unselected-color-hover: #3E3E40;
+  --tree-node-content-hover: #D3D6D9;
+  --tree-node-content-selected: #E5E7E9;
+}

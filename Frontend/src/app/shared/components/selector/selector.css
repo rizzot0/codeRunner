@@ -1,0 +1,57 @@
+:host {
+  display: flex;
+  align-items: center;
+}
+
+::ng-deep .p-cascadeselect {
+  min-width: 180px;
+  background-color: var(--secondary-bg) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: var(--radius-md) !important;
+  transition: all 0.2s ease;
+}
+
+::ng-deep .p-cascadeselect:not(.p-disabled):hover {
+  border-color: var(--accent-blue) !important;
+  box-shadow: 0 0 0 0.1rem rgba(59, 130, 246, 0.15) !important;
+}
+
+::ng-deep .p-cascadeselect:not(.p-disabled).p-focus {
+  border-color: var(--accent-blue) !important;
+  box-shadow: 0 0 0 0.2rem rgba(59, 130, 246, 0.25) !important;
+}
+
+::ng-deep .p-cascadeselect .p-cascadeselect-label {
+  color: var(--text-primary) !important;
+  font-weight: 500;
+}
+
+::ng-deep .p-cascadeselect .p-cascadeselect-trigger {
+  color: var(--text-secondary) !important;
+}
+
+::ng-deep .p-cascadeselect-panel {
+  background-color: var(--secondary-bg) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: var(--radius-md) !important;
+  box-shadow: var(--shadow-lg) !important;
+}
+
+::ng-deep .p-cascadeselect-option {
+  color: var(--text-secondary) !important;
+  transition: all 0.15s ease;
+}
+
+::ng-deep .p-cascadeselect-option:hover {
+  background-color: var(--tertiary-bg) !important;
+  color: var(--text-primary) !important;
+}
+
+::ng-deep .p-cascadeselect-option.p-cascadeselect-option-selected {
+  background-color: var(--accent-blue) !important;
+  color: var(--text-primary) !important;
+}
+
+::ng-deep .p-confirmdialog-icon {
+  color: var(--p-exclamation-icon-bg) !important;
+}

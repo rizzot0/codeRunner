@@ -1,0 +1,9 @@
+vendor
+.git
+.gitignore
+*.md
+node_modules
+Frontend/node_modules
+Backend/bin
+dist
+.DS_Store

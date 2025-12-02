@@ -1,0 +1,23 @@
+<div class="online-compiler-app">
+  <app-header></app-header>
+  <p-toast></p-toast>
+  <div class="main-content">
+    <ngx-flexlayout [layout]="layout" (layoutChanged)="onLayoutChanged()" [class]="flexLayoutTheme()">
+      <div slot="file-explorer">
+        <app-file-explorer></app-file-explorer>
+      </div>
+      <div slot="code-editor">
+        <div class="editor-wrapper">
+          <app-tab-editor></app-tab-editor>
+          <app-code-editor></app-code-editor>
+        </div>
+      </div>
+      <div slot="input-panel">
+        <app-input-panel></app-input-panel>
+      </div>
+      <div slot="terminal">
+        <app-terminal></app-terminal>
+      </div>
+    </ngx-flexlayout>
+  </div>
+</div>

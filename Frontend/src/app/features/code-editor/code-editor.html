@@ -1,0 +1,10 @@
+<ngx-monaco-editor
+  [options]="editorOptions()"
+  [(ngModel)]="code"
+  (ngModelChange)="onCodeChange($event)"
+  (onInit)="onEditorInit($event)">
+</ngx-monaco-editor>
+
+  <div class="editor-help">
+    <button pButton icon="pi pi-info-circle" class="p-button-text p-button-sm" pTooltip="Editor: aquí puedes escribir tu código. Soporta varios lenguajes. Usa el selector de tema arriba para cambiar apariencia." tooltipPosition="left"></button>
+  </div>

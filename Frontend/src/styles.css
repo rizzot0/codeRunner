@@ -1,0 +1,112 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'primeicons/primeicons.css';
+
+/* Variables CSS para tema consistente */
+/* Movido a los archivos de tema individuales para mejor manejo */
+
+
+html, body { 
+  height: 100%; 
+  margin: 0;
+  overflow: hidden;
+}
+
+body { 
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar personalizado */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--secondary-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--button-bg);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-gray);
+}
+
+/* Mejorar inputs de PrimeNG */
+.p-inputtext {
+  background-color: var(--secondary-color) !important;
+  border-color: var(--button-bg) !important;
+  color: var(--text-color) !important;
+}
+
+.p-inputtext:enabled:focus {
+  border-color: var(--accent-blue) !important;
+  box-shadow: 0 0 0 0.2rem rgba(59, 130, 246, 0.25) !important;
+}
+
+.p-inputtextarea {
+  background-color: var(--secondary-color) !important;
+  border-color: var(--button-bg) !important;
+  color: var(--text-color) !important;
+}
+
+.p-inputtextarea:enabled:focus {
+  border-color: var(--accent-blue) !important;
+  box-shadow: 0 0 0 0.2rem rgba(59, 130, 246, 0.25) !important;
+}
+
+/* Mejorar componente Tree de PrimeNG */
+.p-tree {
+  background-color: transparent !important;
+  border: none !important;
+  color: var(--text-color) !important;
+}
+
+.p-tree .p-tree-node-content {
+  background-color: transparent !important;
+  color: var(--text-color) !important;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.p-tree .p-tree-node-content:hover {
+  background-color: var(--secondary-color) !important;
+}
+
+.p-tree .p-tree-node-content.p-tree-node-content-selected {
+  background-color: var(--button-bg) !important;
+  color: var(--text-color) !important;
+}
+
+/* Mejorar CascadeSelect de PrimeNG */
+.p-cascadeselect {
+  background-color: var(--secondary-color) !important;
+  border-color: var(--button-bg) !important;
+  color: var(--text-color) !important;
+}
+
+.p-cascadeselect:not(.p-disabled):hover {
+  border-color: var(--accent-blue) !important;
+}
+
+.p-cascadeselect-panel {
+  background-color: var(--secondary-color) !important;
+  border-color: var(--button-bg) !important;
+}
+
+.p-cascadeselect-option {
+  color: var(--text-color) !important;
+}
+
+.p-cascadeselect-option:hover {
+  background-color: var(--button-bg) !important;
+  color: var(--text-color) !important;
+}

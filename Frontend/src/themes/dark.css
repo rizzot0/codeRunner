@@ -1,0 +1,72 @@
+/* dark.css */
+body.dark-theme {
+  --primary-color: #282a36;
+  --secondary-color: #44475a;
+  --text-color: #f8f8f2;
+  --header-bg: #1e1e1e;
+  --button-bg: #44475a;
+  --button-bg-hover: #6b6d7b;
+  --button-text: #f8f8f2;
+  --accent-green: #50fa7b;
+  --accent-red: #ff5555;
+  --accent-blue: #8be9fd;
+  --accent-gray: #6272a4;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --editor-bg: #1e1e1e; /* Editor background for dark theme */
+  --border-color: #334155; /* Dark gray for borders */
+  --text-muted: #94a3b8; /* Muted gray for text */
+  --tab-unselected-color-hover: #3E3E40;
+  --tab-unselected-color:#2E3138;
+  --tab-border-tab: #3E3E40;
+  --close-buton-hover: rgba(255, 255, 255, 0.1);
+  --tree-node-content-hover: #3E3E40;
+  --tree-node-content-selected: #2E3138;
+
+
+  --p-select-background: #282a36 !important;                   
+  --p-select-disabled-background: #1e1e1e !important;         
+  --p-select-filled-background: #282a36 !important;             
+  --p-select-filled-hover-background: #44475a !important;       
+  --p-select-filled-focus-background: #282a36 !important;      
+  --p-select-border-color: #334155 !important;                  
+  --p-select-hover-border-color: #6272a4 !important;            
+  --p-select-focus-border-color: #50fa7b !important;           
+  --p-select-invalid-border-color: #ff5555 !important;          
+  --p-select-color: #f8f8f2 !important;                         
+  --p-select-disabled-color: #6272a4 !important;               
+  --p-select-placeholder-color: #94a3b8 !important;             
+  --p-select-invalid-placeholder-color: #ff5555 !important;     
+  --p-select-focus-ring-color: rgba(139, 233, 253, 0.2) !important;  
+  --p-select-dropdown-color: #94a3b8 !important;                
+  --p-select-clear-icon-color: #94a3b8 !important;            
+  --p-select-overlay-background: #282a36 !important;           
+  --p-select-overlay-border-color: #334155 !important;        
+  --p-select-overlay-color: #f8f8f2 !important;                 
+  --p-select-option-color: #f8f8f2 !important;                      
+  --p-select-option-focus-background: #3E3E40 !important;            
+  --p-select-option-focus-color: #f8f8f2 !important;                
+  --p-select-option-selected-background: #50fa7b !important;         
+  --p-select-option-selected-color: #282a36 !important;              
+  --p-select-option-selected-focus-background: #50fa7b !important;   
+  --p-select-option-selected-focus-color: #282a36 !important;        
+  --p-select-option-group-background: #1e1e1e !important;      
+  --p-select-option-group-color: #94a3b8 !important;            
+  --p-select-checkmark-color: #282a36 !important;        
+  
+  
+  --p-dialog-background: #282a36 !important;
+  --p-dialog-border-color: #334155 !important;
+  --p-dialog-color: #f8f8f2 !important;
+  --p-exclamation-icon-bg: white !important;
+
+  --p-progressspinner-color-one: white !important;
+  --p-progressspinner-color-two: white !important;
+  --p-progressspinner-color-three: white !important;
+  --p-progressspinner-color-four: white !important;
+
+}

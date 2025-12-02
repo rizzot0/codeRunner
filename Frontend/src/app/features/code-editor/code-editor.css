@@ -1,0 +1,38 @@
+ngx-monaco-editor {
+    height: 100%;
+}
+
+:host {
+  display: block;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+:host { position: relative; }
+
+:host ::ng-deep .ngx-monaco-editor, :host ::ng-deep .monaco-editor {
+    height: 100% !important;
+}
+
+:host ::ng-deep .monaco-editor,
+:host ::ng-deep .monaco-editor *,
+:host ::ng-deep .monaco-diff-editor,
+:host ::ng-deep .monaco-diff-editor * {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+:host ::ng-deep .monaco-editor .view-lines {
+  outline: none !important;
+}
+
+.editor-help {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 1000;
+}
+
+.editor-help .p-button {
+  color: var(--text-muted);
+}

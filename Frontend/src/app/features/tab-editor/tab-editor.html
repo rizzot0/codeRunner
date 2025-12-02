@@ -1,0 +1,17 @@
+<div class="tab-container" #tabContainer>
+
+    @for (file of tabsElement(); track $index) {
+        <div 
+            (click)="handleSelectTab(file.id)"
+            class="tab" 
+            [class.tab-selected]="file.id === selectedTab()"
+            [class.tab-unselected]="file.id !== selectedTab()"
+        >
+            <p>{{ file.name }}</p>
+            <span (click)="onCloseTab($event, file.id)" class="close-button">
+            &times;
+            </span>
+        </div>
+    }
+    <div class="rest" ></div>
+</div>

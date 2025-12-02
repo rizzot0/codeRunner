@@ -1,0 +1,86 @@
+
+
+.tab-container {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    padding-bottom: 1em;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    background-color: var(--tab-selected-tab);
+}
+
+.tab-container::-webkit-scrollbar {
+  height: 4px;
+  display: none;
+}
+
+.tab-container::-webkit-scrollbar:hover {
+  height: 4px;
+  display: block;
+}
+
+.tab-container::-webkit-scrollbar-track {
+    background: var(--tab-selected-tab);
+}
+
+.tab p {
+    margin: 8px 0;
+}
+
+.tab {
+    cursor: pointer;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    gap: 14px;
+    padding: 0 18px;
+    border-right: 1px solid var(--tab-border-tab);
+}
+
+
+.tab-unselected {
+    border-left: 1px solid var(--tab-border-tab);
+    border-bottom: 1px solid var(--tab-border-tab);
+    border-top: none;
+    background-color: var(--tab-unselected-color);
+}
+
+.tab-unselected:hover {
+    background-color: var(--tab-unselected-color-hover);
+}
+
+.rest {
+    flex-grow: 1;
+    background-color: var(--secondary-bg);
+    border-bottom: 1px solid var(--tab-border-tab);
+}
+
+.tab-unselected .close-button {
+  opacity: 0;
+  flex-shrink: 0;
+}
+
+.tab:hover .close-button {
+  opacity: 1;
+}
+
+.close-button {
+    width: 16px;
+    height: 22px;
+    font-size: large;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    transition: all 0.15s ease;
+    color: var(--color-close-button);
+}
+
+.close-button:hover {
+    cursor: pointer;
+    background-color: var(--close-buton-hover);
+    color: white;
+}

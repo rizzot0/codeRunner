@@ -1,0 +1,9 @@
+<p-select
+  [(ngModel)]="selectedLanguage"
+  [options]="languages"
+  optionLabel="name"
+  placeholder="Lenguaje"
+  (onChange)="onLanguageChange($event.value)"
+  [style]="{'min-width': '150px'}"/>
+<p-confirmDialog />
+

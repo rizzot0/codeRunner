@@ -1,0 +1,4 @@
+<button [disabled]="isDisabled()" [class]="'btn-' + color()" (click)="onClick()">
+    <i [class]="icon()"></i>
+    <span pButtonLabel>{{ description() }}</span>
+</button>

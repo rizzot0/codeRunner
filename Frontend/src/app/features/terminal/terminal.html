@@ -1,0 +1,17 @@
+<div class="terminal-content">
+  <div class="terminal-help">
+    <button pButton icon="pi pi-info-circle" class="p-button-text p-button-sm" pTooltip="Terminal: aquí verás la salida de tu programa (stdout y stderr). La terminal se muestra automáticamente al ejecutar." tooltipPosition="left"></button>
+  </div>
+
+  @if (loading()) {
+    <div class="spinner-center">
+      <p-progressSpinner ariaLabel="loading" />
+    </div>
+  } @else {
+    <pre class="terminal-output">
+      <span class="stdout">{{ stdout() }}</span>
+      <span class="stderr">{{ stderr() }}</span>
+    </pre>
+  }
+
+</div>

@@ -1,0 +1,57 @@
+.online-compiler-app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+}
+
+.main-content {
+  height: calc(100vh - 60px);
+  flex: 1;
+  overflow: hidden;
+}
+
+ngx-flexlayout {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+ngx-flexlayout > div[slot] {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+
+.editor-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--editor-bg);
+}
+
+.editor-wrapper app-tab-editor {
+  flex-shrink: 0;
+}
+
+.editor-wrapper app-code-editor {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+ngx-flexlayout > div[slot="code-editor"] {
+  min-height: 0;
+}
+
+
+@media (max-width: 768px) {
+  .editor-wrapper {
+    min-height: 300px;
+  }
+}

@@ -1,0 +1,137 @@
+<div class="file-explorer-header">
+  <h3 class="file-explorer-title">
+    <i class="pi pi-folder-open"></i>
+    Explorador de archivos
+  </h3>
+  <div class="file-explorer-actions">
+            <button pButton icon="pi pi-file-plus" (click)="openNewFileDialog()"
+              class="p-button-text p-button-sm"
+              pTooltip="Nuevo archivo" tooltipPosition="bottom">
+            </button>
+            <button pButton icon="pi pi-folder-plus" (click)="openNewFolderDialog()"
+              class="p-button-text p-button-sm"
+              pTooltip="Nueva carpeta" tooltipPosition="bottom">
+            </button>
+            <button pButton icon="pi pi-info-circle" class="p-button-text p-button-sm"
+              pTooltip="Explorador: muestra archivos y carpetas del proyecto. Puedes crear archivos y carpetas (no se permiten carpetas anidadas). El archivo principal no puede eliminarse." tooltipPosition="bottom">
+            </button>
+  </div>
+</div>
+<div class="file-explorer-content">
+  <p-tree
+    [value]="files()"
+    [(selection)]="selectedNode"
+    selectionMode="single"
+    (onNodeSelect)="onNodeSelect($event)"
+    (onNodeUnselect)="onNodeUnselect($event)"
+    [contextMenu]="cm"
+    class="w-full"/>
+  <p-contextMenu #cm [model]="contextMenuItems" />
+</div>
+
+<!-- Rename dialog (reusing export-style dialog UI) -->
+<p-dialog [(visible)]="visibleRename" (onHide)="cancelRename()" [modal]="true" [closable]="true" [closeOnEscape]="true" [header]="(selectedNode()?.type === 'folder') ? 'Renombrar carpeta' : 'Renombrar archivo'" [style]="{width: '420px'}">
+  <div class="p-fluid">
+    <div class="p-field">
+      <label for="renameName">Nuevo nombre</label>
+      <input id="renameName" pInputText [(ngModel)]="renameNewName" (keydown)="$event.key === 'Escape' ? cancelRename() : null" />
+    </div>
+    <div *ngIf="renameError()" class="p-error">{{ renameError() }}</div>
+    <!-- Tipo line removed per UX request -->
+  </div>
+  <ng-template pTemplate="footer">
+    <button pButton label="Cancelar" class="p-button-text" (click)="cancelRename()"></button>
+    <button pButton label="Renombrar" (click)="confirmRename()" [disabled]="!renameNewName().trim() || renameError()"></button>
+  </ng-template>
+</p-dialog>
+
+<!-- Delete confirmation dialog (reuses modal pattern from export) -->
+<p-dialog [(visible)]="visibleDelete" (onHide)="cancelDelete()" [modal]="true" [closable]="true" [closeOnEscape]="true" [header]="'Confirmar eliminación'" [style]="{width: '420px'}">
+  <div class="p-fluid">
+    <div class="p-field">
+      <p>¿Estás seguro de que quieres eliminar "{{ selectedNode()?.label }}"? Esta acción no puede deshacerse.</p>
+    </div>
+  </div>
+  <ng-template pTemplate="footer">
+    <button pButton label="Cancelar" class="p-button-text" (click)="cancelDelete()"></button>
+    <button pButton label="Eliminar" (click)="confirmDelete()"></button>
+  </ng-template>
+</p-dialog>
+
+<p-dialog
+  [(visible)]="showNewFileDialog"
+  [header]="'Nuevo Archivo'"
+  [modal]="true"
+  [style]="{width: '400px'}">
+  <div class="p-fluid">
+    <div class="p-field">
+      <label for="fileName">Nombre del archivo</label>
+      <input
+        pInputText
+        id="fileName"
+        [(ngModel)]="newItemName"
+        placeholder="ejemplo.js"
+        (keyup.enter)="createNewFile()" />
+    </div>
+  </div>
+  <ng-template pTemplate="footer">
+    <button pButton label="Cancelar" icon="pi pi-times"
+            (click)="showNewFileDialog.set(false)"
+            class="p-button-text"></button>
+    <button pButton label="Crear" icon="pi pi-check"
+            (click)="createNewFile()"></button>
+  </ng-template>
+</p-dialog>
+
+<p-dialog
+  [(visible)]="showNewFolderDialog"
+  [header]="'Nueva Carpeta'"
+  [modal]="true"
+  [style]="{width: '400px'}">
+  <div class="p-fluid">
+    <div class="p-field">
+      <label for="folderName">Nombre de la carpeta</label>
+      <input
+        pInputText
+        id="folderName"
+        [(ngModel)]="newItemName"
+        placeholder="mi-carpeta"
+        (keyup.enter)="createNewFolder()" />
+    </div>
+  </div>
+  <ng-template pTemplate="footer">
+    <button pButton label="Cancelar" icon="pi pi-times"
+            (click)="showNewFolderDialog.set(false)"
+            class="p-button-text"></button>
+    <button pButton label="Crear" icon="pi pi-check"
+            (click)="createNewFolder()"></button>
+  </ng-template>
+</p-dialog>
+
+
+<p-dialog [(visible)]="showNestedFolderDialog" [header]="'Carpetas Anidadas'" [modal]="true" [style]="{width: '480px'}">
+  <div class="p-fluid">
+    <p style="font-size: larger;">No se pueden anidar Carpetas</p>
+  </div>
+  <ng-template pTemplate="footer">
+    <button pButton label="Aceptar" icon="pi pi-check"
+            (click)="handleConfirmationNestedFolder()"
+            class="p-button-text">
+    </button>
+  </ng-template>
+
+</p-dialog>
+
+<p-dialog [(visible)]="showMessageMainFile" [header]="'Archivo Principal'" [modal]="true" [style]="{width: '480px'}">
+  <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; font-size: larger;">
+    <i class='pi pi-exclamation-triangle'></i>
+    <p>No puedes eliminar el archivo principal del proyecto</p>
+  </div>
+  <ng-template pTemplate="footer">
+    <button pButton label="Aceptar" icon="pi pi-check"
+            (click)="handleConfirmationMainFile()"
+            class="p-button-text">
+    </button>
+  </ng-template>
+
+</p-dialog>

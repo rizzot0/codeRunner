@@ -1,0 +1,73 @@
+{
+  "base": "vs",
+  "inherit": true,
+  "rules": [
+    {
+      "token": "comment",
+      "foreground": "7C6F64"
+    },
+    {
+      "token": "string",
+      "foreground": "98971A"
+    },
+    {
+      "token": "number",
+      "foreground": "D79921"
+    },
+    {
+      "token": "keyword",
+      "foreground": "458588"
+    },
+    {
+      "token": "delimiter",
+      "foreground": "A89984"
+    },
+    {
+      "token": "tag",
+      "foreground": "458588"
+    },
+    {
+      "token": "tag.attribute",
+      "foreground": "689D6A"
+    },
+    {
+      "token": "regexp",
+      "foreground": "D65D0E"
+    },
+    {
+      "token": "operator",
+      "foreground": "A89984"
+    },
+    {
+      "token": "type",
+      "foreground": "B16286"
+    },
+    {
+      "token": "variable",
+      "foreground": "CC241D"
+    },
+    {
+      "token": "function",
+      "foreground": "076678"
+    },
+    {
+      "token": "identifier",
+      "foreground": "3C3836"
+    }
+  ],
+  "colors": {
+    "editor.foreground": "#3C3836",
+    "editor.background": "#FBF1C7",
+    "editorCursor.foreground": "#3C3836",
+    "editor.selectionBackground": "#D5C4A1",
+    "editor.inactiveSelectionBackground": "#EBDBB2",
+    "editorLineNumber.foreground": "#A89984",
+    "editor.lineHighlightBackground": "#EBDBB2",
+    "editor.rangeHighlightBackground": "#EBDBB2",
+    "editorWhitespace.foreground": "#A89984",
+    "editorIndentGuide.background": "#A89984",
+    "editorRuler.foreground": "#A89984",
+    "editorBracketMatch.background": "#D5C4A1",
+    "editorBracketMatch.border": "#A89984"
+  }
+}

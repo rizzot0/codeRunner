@@ -1,0 +1,115 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+:host { position: relative }
+
+.file-explorer-header {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--editor-bg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.project-name-container:hover {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.file-explorer-title {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.file-explorer-actions {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.file-explorer-content {
+  flex: 1;
+  overflow-y: auto;
+  background-color: var(--editor-bg);
+}
+
+::ng-deep .p-tree {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+::ng-deep .p-tree-root-children {
+  gap : 0 !important;
+  padding-block-start: 0 !important;
+}
+
+::ng-deep .p-tree .p-tree-node-content {
+  padding: 0.5rem !important;
+  border-radius: 0 !important;
+  transition: all 0.15s ease !important;
+  background: transparent !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+::ng-deep .p-tree .p-tree-node-content:hover {
+  background-color: var(--tree-node-content-hover) !important;
+}
+
+::ng-deep .p-tree .p-tree-node-content.p-tree-node-selected {
+  background-color: var(--tree-node-content-selected) !important;
+  color: var(--text-primary) !important;
+}
+
+::ng-deep .p-tree .p-tree-node-label {
+  color: var(--text-secondary) !important;
+  font-size: 0.875rem !important;
+  flex: 1 !important;
+}
+
+::ng-deep .p-tree .p-tree-node-content.p-tree-node-selected .p-tree-node-label {
+  color: var(--text-primary) !important;
+  font-weight: 500 !important;
+}
+
+::ng-deep .p-tree .p-tree-toggler,
+::ng-deep .p-tree .p-tree-node-toggle-button {
+  color: var(--text-muted) !important;
+  margin-right: 0.25rem !important;
+  flex-shrink: 0 !important;
+}
+
+::ng-deep .p-tree .p-tree-toggler:hover,
+::ng-deep .p-tree .p-tree-node-toggle-button:hover {
+  color: var(--text-primary) !important;
+}
+
+::ng-deep .p-tree .p-tree-node-content.p-tree-node-selected .p-tree-toggler,
+::ng-deep .p-tree .p-tree-node-content.p-tree-node-selected .p-tree-node-toggle-button {
+  color: var(--text-primary) !important;
+}
+
+::ng-deep .p-tree .p-tree-node-icon {
+  color: var(--text-muted) !important;
+  margin-right: 0.5rem !important;
+  flex-shrink: 0 !important;
+}
+
+::ng-deep .p-tree .p-tree-node-content.p-tree-node-selected .p-tree-node-icon {
+  color: var(--text-primary) !important;
+}
+
+::ng-deep .p-tree .p-tree-node-content.p-tree-node-selected .p-tree-node-toggle-icon {
+  color: var(--text-primary) !important;
+}

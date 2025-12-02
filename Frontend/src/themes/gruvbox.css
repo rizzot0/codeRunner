@@ -1,0 +1,81 @@
+/* gruvbox.css */
+body.gruvbox-theme {
+  --primary-color: #fbf1c7;
+  --secondary-color: #ebdbb2;
+  --text-color: #3c3836;
+  --header-bg: #ebdbb2;
+  --button-bg: #6c757d;
+  --button-text: #fbf1c7;
+  --accent-green: #98971a;
+  --accent-red: #cc241d;
+  --accent-blue: #458588;
+  --accent-gray: #928374;
+  --shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  --shadow-md: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --editor-bg: #ffffff;
+  --border-color: #d5c4a1;
+  --text-muted: #928374;
+  --tab-selected-tab: #FFFFFE;
+  --tab-unselected-color-hover: #3E3E40;
+  --tab-selected-tab: #FFFFFE;
+  --tab-unselected-color-hover: #D3D6D9;
+  --tab-unselected-color:#E5E7E9;
+  --tab-border-tab: #D3D6D9;
+  --close-buton-hover: rgba(0, 0, 0, 0.2);
+  --tree-node-content-hover: #D3D6D9;
+  --tree-node-content-selected: #E5E7E9;
+
+  --p-select-background: #ffffff !important;
+  --p-select-disabled-background: #f8f9fa !important;
+  --p-select-filled-background: #ffffff !important;
+  --p-select-filled-hover-background: #e9ecef !important;
+  --p-select-filled-focus-background: #ffffff !important;
+  
+  --p-select-border-color: #ced4da !important;
+  --p-select-hover-border-color: #6c757d !important;
+  --p-select-focus-border-color: #28a745 !important;
+  --p-select-invalid-border-color: #dc3545 !important;
+  
+  --p-select-color: #212529 !important;
+  --p-select-disabled-color: #6c757d !important;
+  --p-select-placeholder-color: #6c757d !important;
+  --p-select-invalid-placeholder-color: #dc3545 !important;
+  
+  --p-select-focus-ring-color: rgba(40, 167, 69, 0.2) !important;
+
+  --p-select-dropdown-color: #6c757d !important;
+  --p-select-clear-icon-color: #6c757d !important;
+
+  --p-select-overlay-background: #ffffff !important;
+  --p-select-overlay-border-color: #ced4da !important;
+  --p-select-overlay-color: #212529 !important;
+  
+  --p-select-option-color: #212529 !important;
+  --p-select-option-focus-background: #D3D6D9 !important;
+  --p-select-option-focus-color: #212529 !important;
+  --p-select-option-selected-background: #28a745 !important;
+  --p-select-option-selected-color: #ffffff !important;
+  --p-select-option-selected-focus-background: #28a745 !important;
+  --p-select-option-selected-focus-color: #ffffff !important;
+  
+  --p-select-option-group-background: #f8f9fa !important;
+  --p-select-option-group-color: #6c757d !important;
+  
+  --p-select-checkmark-color: #ffffff !important;
+
+  --p-dialog-background: #ffffff !important;
+  --p-dialog-border-color: var(--border-color) !important;
+  --p-dialog-color: #212529 !important;
+  --p-exclamation-icon-bg:#212529 !important;
+
+    --p-progressspinner-color-one: var(--accent-gray) !important;
+  --p-progressspinner-color-two: var(--accent-gray) !important;
+  --p-progressspinner-color-three: var(--accent-gray) !important;
+  --p-progressspinner-color-four: var(--accent-gray) !important;
+
+  
+}

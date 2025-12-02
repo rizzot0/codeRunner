@@ -1,0 +1,42 @@
+<div class="header-app">
+    <div class="header-brand">
+        <div class="header-title">
+            @if (themeService.theme() === 'dark' || themeService.theme() === 'dracula' ) {
+                <img src="../../../assets/cp-blanco.png" style="border-radius: 50%" alt="CP Cloud" width="40px" height="40px" />
+            } @else {
+                <img src="../../../assets/cp-img.png" style="border-radius: 50%" alt="CP Cloud" width="40px" height="40px" />
+            }
+            <h1 class="title-app">
+            Cloud Programming 
+            </h1>
+            
+        </div>
+        <app-selector class="language-selector"></app-selector>
+        <app-theme-selector></app-theme-selector>
+    </div>
+    <div class="button-list">
+        @for (button of buttons; track button.icon) {
+            <app-button 
+            [isLoading]="button.isLoading()"
+            [icon]="button.icon" 
+            [description]="button.description"
+            [color]="button.color"
+            (clicked)="button.onClick?.()">
+            </app-button>
+        }
+    </div>
+</div>
+
+
+<p-dialog [(visible)]="showExportDialog" [modal]="true" [header]="'Exportar proyecto'" [style]="{width: '420px'}">
+    <div class="p-fluid">
+        <div class="p-field">
+            <label for="exportName">Nombre del archivo (sin extensión)</label>
+            <input id="exportName" pInputText [(ngModel)]="exportFilename" placeholder="project" />
+        </div>
+    </div>
+    <ng-template pTemplate="footer">
+        <button pButton label="Cancelar" class="p-button-text" (click)="cancelExport()"></button>
+        <button pButton label="Exportar" (click)="confirmExport()"></button>
+    </ng-template>
+</p-dialog>

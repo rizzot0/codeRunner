@@ -1,0 +1,12 @@
+<div class="input-panel-content">
+  <div class="input-help">
+    <button pButton icon="pi pi-info-circle" class="p-button-text p-button-sm" pTooltip="Entrada: escribe aquí los datos que tu programa leerá desde stdin. Cada ejecución usará este texto como entrada estándar." tooltipPosition="left"></button>
+  </div>
+  <ngx-monaco-editor
+    class="monaco-input" 
+    [options]="editorOptions" 
+    [(ngModel)]="inputValue"
+    (ngModelChange)="onInputChange($event)">
+  </ngx-monaco-editor>
+  <p class="input-helper-text">Los datos ingresados aquí estarán disponibles como entrada estándar para su programa</p>
+</div>
