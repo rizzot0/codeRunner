@@ -5,10 +5,10 @@ import (
 	"context"
 	"io"
 
-	"github.com/elfaldiajr/compiladorEnLineaCP/internal/docker"
-	"github.com/elfaldiajr/compiladorEnLineaCP/internal/sandbox"
 	"github.com/docker/docker/api/types/container"
 	"github.com/docker/docker/pkg/stdcopy"
+	"github.com/elfaldiajr/compiladorEnLineaCP/internal/docker"
+	"github.com/elfaldiajr/compiladorEnLineaCP/internal/sandbox"
 )
 
 type PythonRunner struct{}

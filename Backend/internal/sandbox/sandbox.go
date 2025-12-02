@@ -26,7 +26,6 @@ func NewSandbox(runner Runner) (*Sandbox, error) {
 	sessionID := uuid.NewString()
 	hostWorkDir := filepath.Join(os.TempDir(), "sandboxes", sessionID)
 
-
 	if err := os.MkdirAll(hostWorkDir, 0755); err != nil {
 		return nil, err
 	}
@@ -56,7 +55,6 @@ func (s *Sandbox) Execute(entrypoint string, timeout time.Duration) (*ExecutionO
 	return s.runner.Run(ctx, s.HostWorkDir, s.ContainerWorkDir, entrypoint)
 }
 
-
 // Esta funcion esta destinada a limpiar los archivos temporales del sandbox
 // Mediante un endpoint
 // /sandbox/{id}
@@ -67,4 +65,3 @@ func (s *Sandbox) Cleanup() error {
 
 	return os.RemoveAll(s.HostWorkDir)
 }
-

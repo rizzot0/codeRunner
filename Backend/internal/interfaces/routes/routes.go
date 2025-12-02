@@ -14,6 +14,6 @@ func SetupRouter() *gin.Engine {
 
 	SetupExecutionRouter(r)
 	SetupSnippetRouter(r)
-	
+
 	return r
 }
