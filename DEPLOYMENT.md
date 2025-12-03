@@ -145,6 +145,26 @@ res.setHeader('Access-Control-Allow-Origin', '*');
 - Check browser console (F12) for network errors
 - Ensure CORS headers are set (they should be automatically)
 
+### Frontend 404 / "No Output Directory" (Vercel)
+
+This repository's Angular build outputs files to `Frontend/dist/Frontend`. If Vercel finishes the build but returns a 404 (or shows "No Output Directory named '<name>' found"), fix it one of two ways:
+
+- Quick (dashboard): In the Vercel project settings for the Frontend project set:
+  - **Root Directory**: `Frontend`
+  - **Output Directory**: `dist/Frontend`
+
+- Repo-based (recommended for reproducibility): keep the Project Root set to `Frontend` in Vercel and add a `vercel.json` in the `Frontend` folder (already added):
+  - `Frontend/vercel.json` contains `{ "outputDirectory": "dist/Frontend" }`
+  - This instructs Vercel to use the `dist/Frontend` folder produced by `ng build` as the static output.
+
+After changing either setting, trigger a redeploy. In the build logs you should see a line like:
+```
+Output location: /vercel/path0/Frontend/dist/Frontend
+```
+When that appears and the deployment completes, opening the project URL should serve the app instead of returning 404.
+
+If you prefer, I can update the Vercel Project settings for you — or guide you through the dashboard steps and verify a redeploy.
+
 ### Code Execution Times Out
 - Vercel free tier: 10-second timeout
 - Upgrade to Vercel Pro for longer timeouts
