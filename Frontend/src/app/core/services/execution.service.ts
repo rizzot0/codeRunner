@@ -52,8 +52,11 @@ export class ExecutionService {
                 throw new Error('No hay un archivo de entrada para ejecutar')
             }
 
-            if (language === 'python' && environment.useClientRuntime) {
+            if (environment.useClientRuntime && language === 'python') {
                 this.stderr.set('Cargando Python en el navegador (solo la primera vez)…')
+            }
+            if (environment.useClientRuntime && (language === 'cpp' || language === 'c++')) {
+                this.stderr.set('Compilando C++…')
             }
 
             const output = environment.useClientRuntime

@@ -97,7 +97,7 @@ The public demo runs **in the browser** so it can live on GitHub Pages with no e
 
 - JavaScript: Web Worker with timeout
 - Python: [Pyodide](https://pyodide.org) (CPython in WebAssembly, first run downloads the runtime)
-- C++: [JSCPP](https://www.npmjs.com/package/JSCPP) interpreter (subset of C++, enough for the usual demo)
+- C++: [Compiler Explorer](https://godbolt.org) (g++ 13, con CORS; el intérprete JSCPP se rompía al parsear)
 
 Vercel/Netlify **do not** ship `python3` or `g++`. The Node backend can still use local compilers (`EXECUTOR=local`) or Paiza as a remote runner if you deploy it later.
 

@@ -100,38 +100,61 @@ export async function runPython(code: string, stdin: string): Promise<RunResult>
   }
 }
 
-async function loadJscpp(): Promise<any> {
-  const existing = (window as any).JSCPP;
-  if (existing) return existing;
-  await new Promise<void>((resolve, reject) => {
-    const script = document.createElement('script');
-    script.src = 'https://cdn.jsdelivr.net/npm/JSCPP@2.0.6/dist/JSCPP.es5.min.js';
-    script.onload = () => resolve();
-    script.onerror = () => reject(new Error('No se pudo cargar el runtime de C++'));
-    document.head.appendChild(script);
-  });
-  return (window as any).JSCPP;
+type CompilerExplorerLine = { text?: string } | string;
+
+function ceText(lines: CompilerExplorerLine[] | undefined): string {
+  if (!Array.isArray(lines) || lines.length === 0) return '';
+  return lines
+    .map((line) => (typeof line === 'string' ? line : line.text ?? ''))
+    .join('\n');
 }
 
 export async function runCpp(code: string, stdin: string): Promise<RunResult> {
-  const JSCPP = await loadJscpp();
-  let stdout = '';
-  try {
-    JSCPP.run(code, stdin ?? '', {
-      maxTimeout: 8000,
-      stdio: {
-        write: (s: string) => {
-          stdout += s;
+  const response = await fetch('https://godbolt.org/api/compiler/g132/compile', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+    },
+    body: JSON.stringify({
+      source: code,
+      lang: 'c++',
+      options: {
+        userArguments: '-std=c++17',
+        executeParameters: {
+          args: [],
+          stdin: stdin ?? '',
+        },
+        compilerOptions: {
+          executorRequest: true,
+        },
+        filters: {
+          execute: true,
         },
       },
-    });
-    return { stdout, stderr: '' };
-  } catch (error) {
+    }),
+  });
+
+  if (!response.ok) {
+    throw new Error(`No se pudo compilar C++ (${response.status})`);
+  }
+
+  const data = await response.json();
+  const compileErr = ceText(data.buildResult?.stderr);
+  const runErr = ceText(data.stderr);
+  const stdout = ceText(data.stdout);
+
+  if (!data.didExecute) {
     return {
       stdout,
-      stderr: String(error),
+      stderr: compileErr || runErr || 'La compilación de C++ falló',
     };
   }
+
+  return {
+    stdout,
+    stderr: [compileErr, runErr].filter(Boolean).join('\n'),
+  };
 }
 
 export async function runInBrowser(
