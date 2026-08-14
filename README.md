@@ -91,11 +91,15 @@ Execute code in a sandbox.
 }
 ```
 
-## Limitations
+## Demo
 
-- **Timeout:** 10 seconds (free tier) / 300 seconds (Pro)
-- **Memory:** Shared with Vercel function limits
-- **No Docker:** Direct process execution (safer, simpler)
+The public demo runs **in the browser** so it can live on GitHub Pages with no extra paid services:
+
+- JavaScript: Web Worker with timeout
+- Python: [Pyodide](https://pyodide.org) (CPython in WebAssembly, first run downloads the runtime)
+- C++: [JSCPP](https://www.npmjs.com/package/JSCPP) interpreter (subset of C++, enough for the usual demo)
+
+Vercel/Netlify **do not** ship `python3` or `g++`. The Node backend can still use local compilers (`EXECUTOR=local`) or Paiza as a remote runner if you deploy it later.
 
 ## What to Highlight in Your Portfolio
 

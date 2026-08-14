@@ -1,4 +1,5 @@
 export const environment = {
-    production : true,
-    apiUrl : 'https://code-runner-navy.vercel.app'
-}
+  production: false,
+  apiUrl: 'http://localhost:3000',
+  useClientRuntime: true,
+};
