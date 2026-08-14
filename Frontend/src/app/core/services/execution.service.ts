@@ -55,7 +55,7 @@ export class ExecutionService {
             if (environment.useClientRuntime && language === 'python') {
                 this.stderr.set('Cargando Python en el navegador (solo la primera vez)…')
             }
-            if (environment.useClientRuntime && (language === 'cpp' || language === 'c++')) {
+            if (environment.useClientRuntime && language === 'cpp') {
                 this.stderr.set('Compilando C++…')
             }
 
